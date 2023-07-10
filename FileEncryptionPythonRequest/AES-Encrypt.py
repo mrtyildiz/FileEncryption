@@ -7,7 +7,7 @@ def AESEncrypt(url, ID, PIN, init_vec,KName,file_Name):
         "PIN": PIN,
         "init_vector": init_vec,
         "KName": KName,
-        "ENamePath": file_Name
+        "FNamePath": file_Name
     }
 
     headers = {'Content-Type': 'application/json'}
@@ -20,10 +20,10 @@ def AESEncrypt(url, ID, PIN, init_vec,KName,file_Name):
     else:
         print("POST request failed with status code:", response.status_code)
 
-url = "http://127.0.0.1:8000/FileDecPYHSM/"
+url = "http://127.0.0.1:8000/FileEncPYHSM/"
 ID = 0
 PIN = "1111"
 init_vec = "2r4AlGJ7VsFS0AS1Dw4FCA=="
 KName = "aes_key"
-file_Name = "dene.txt.enc"
+file_Name = "dene.txt"
 AESEncrypt(url, ID, PIN, init_vec,KName,file_Name)

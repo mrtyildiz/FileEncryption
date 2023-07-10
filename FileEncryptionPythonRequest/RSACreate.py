@@ -1,13 +1,12 @@
 import requests
 import json
 
-def AESEncrypt(url, ID, PIN, init_vec,KName,file_Name):
+def RSACreate(url, ID, PIN, PubKeyName,PrivKeyName):
     data = {
         "ID": ID,
         "PIN": PIN,
-        "init_vector": init_vec,
-        "KName": KName,
-        "ENamePath": file_Name
+        "PublicLabel": PubKeyName,
+        "PrivateLabel": PrivKeyName
     }
 
     headers = {'Content-Type': 'application/json'}
@@ -20,10 +19,9 @@ def AESEncrypt(url, ID, PIN, init_vec,KName,file_Name):
     else:
         print("POST request failed with status code:", response.status_code)
 
-url = "http://127.0.0.1:8000/FileDecPYHSM/"
+url = "http://127.0.0.1:8000/RSACreate/"
 ID = 0
 PIN = "1111"
-init_vec = "2r4AlGJ7VsFS0AS1Dw4FCA=="
-KName = "aes_key"
-file_Name = "dene.txt.enc"
-AESEncrypt(url, ID, PIN, init_vec,KName,file_Name)
+PubKeyName = "publicdene"
+PrivKeyName = "privdene"
+RSACreate(url, ID, PIN, PubKeyName,PrivKeyName)
