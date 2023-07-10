@@ -1,0 +1,11 @@
+***** HSM	Id		Ip			Port		Type		Status		Description
+HSM		0		192.168.1.140		5000		Independent	Active		
+***** PIN	status
+USER		true
+SO		true
+***** HIGH AVAILABILITY mode status
+HIGH_AV		false
+***** DEFAULTS
+DEF_IP		192.168.1.140
+DEF_PORT	5000
+DEF_ID		0
